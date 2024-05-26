@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de"> <!-- Sprachattribut auf Deutsch geändert -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap HS-Fulda Logo</title>
+  <link href="include/css/bootstrap.min.css" rel="stylesheet"> <!-- rel-Attribut hinzugefügt -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+</head>
+<body>
+  <header id="header" class="container mt-3"> <!-- Container-Klasse hinzugefügt -->
+    <img src="hs_fulda_logowithname.png" alt="Dummy Logo Header" height="50" width="200">
+  </header>
+  
+  <nav id="menu" class="container"> <!-- Container-Klasse hinzugefügt -->
+    <ul class="nav"> <!-- Bootstrap-Navigationselemente -->
+      <li class="nav-item"><a class="nav-link" href="welcomePage.html">Startseite</a></li>
+      <li class="menuItem"><a class="nav-link" href="#" target=_blank>New tab</a></li>
+      <li class="nav-item"><a class="nav-link" href="aboutMe.html">Kontakt</a></li>
+      <li class="menuItem"><a class="nav-link" href="#" style="background-color: #11c44a; color: #fff; ">Logo</a></li>
+    </ul>
+  </nav>
+  
+  <div id="content" class="container"> <!-- Container-Klasse hinzugefügt -->
+    <div class="row align-items-center">
+
+      <div class="col card m-2"> <!-- Bootstrap-Kartelement -->
+        <img src="HS_fulda_logo.jpeg" class="card-img-top p-5" alt="Bild"> <!-- Bild innerhalb der Karte -->
+        <div class="card-body"> <!-- Körper der Karte -->
+          <h5 class="card-title">HS Fulda Logo</h5> <!-- Titel der Karte -->
+          <p class="card-text">Ein kurzer Beispieltext, 
+            der den Inhalt der Karte beschreibt.</p> <!-- Text der Karte -->
+        </div>
+      </div>
+
+      <div class="col card m-2"> <!-- Bootstrap-Kartelement -->
+        <img src="AI_logo.png" class="card-img-top p-5" alt="Bild"> <!-- Bild innerhalb der Karte -->
+        <div class="card-body"> <!-- Körper der Karte -->
+          <h5 class="card-title">FB Angewandte Infromatik Logo</h5> <!-- Titel der Karte -->
+          <p class="card-text">Ein kurzer Beispieltext, 
+            der den Inhalt der Karte beschreibt.</p> <!-- Text der Karte -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <footer class="container m-2 mb-3 text-center"> <!-- Container-Klasse hinzugefügt -->
+    &copy; 2024 Beispiel GmbH. Alle Rechte vorbehalten.
+  </footer>
+  
+  <script src="include/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

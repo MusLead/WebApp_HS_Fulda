@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+#header {
+    background-color: #f0f0f0;
+    padding: 10 px;
+    text-align: left;
+}
+#menu {
+    background-color: #dddddd;
+    width: 200px;
+    padding: 20px;
+    flex-grow: 1;
+}
+#content {
+    background-color: #eeeeee;
+    flex-grow: 2;
+    padding: 20px;
+}
+.menuItem {
+    margin: 10px 0;
+}
+nav ul li a:hover {
+    color: red;
+}
+main p em {
+    color: blue;
+}
+.container {
+    flex-grow: 1; 
+    display: flex;
+}
+footer {
+    padding: 10px; 
+    text-align: center;
+}
+nav ul li a.active {
+    background-color: #11c44a; /* Change to your desired color */
+    color: #fff; /* Change to your desired color */
+}

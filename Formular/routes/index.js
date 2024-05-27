@@ -5,11 +5,6 @@ var bodyParser = require('body-parser');
 // Middleware
 router.use(bodyParser.urlencoded({ extended: true }));
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-
 /* GET person form. */
 router.get('/', function(req, res, next) {
   res.render('person');

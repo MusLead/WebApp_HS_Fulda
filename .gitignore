@@ -1,5 +1,6 @@
 # Ignore all node_modules directories
 **/node_modules/
+/Express/myApp/node_modules/
 
 # Other potential entries
 .env

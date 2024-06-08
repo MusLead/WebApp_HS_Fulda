@@ -1,7 +1,7 @@
 
 Anleitung express
 
-install express in the target folder!
+install express in the target folder (if the ejs in the target folder has not been added!)
 ```
 express --view=ejs 
 ```
@@ -12,12 +12,13 @@ npm install
 ```
 WARNING!, please install the dependencies every time the repos is being clones or being updated!
 
+The default port should be in `localhost:3000`
 
-optional:
-change things in the file package.json
+Optional:
+change things in the file `package.json`
 ```json
 {
-  "name": "formular",
+  "name": "<PROJECT-NAME>",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -37,4 +38,11 @@ change things in the file package.json
   }
 }
 
+```
+
+after changing `package.json` try to run the application using
+
+```sh
+npm install
+npm run dev
 ```

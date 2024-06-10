@@ -6,13 +6,8 @@ install express in the target folder (if the ejs in the target folder has not be
 express --view=ejs 
 ```
 
-install the dependencies
-```
-npm install
-```
 WARNING!, please install the dependencies every time the repos is being clones or being updated!
 
-The default port should be in `localhost:3000`
 
 Optional:
 change things in the file `package.json`
@@ -23,16 +18,16 @@ change things in the file `package.json`
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    // add this line below, 
+    // Do not forget the comma before the line!
+    "dev": "nodemon ./bin/www" 
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "^3.1.10",
-    "express": "^4.19.2",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    //... default dependencies
   },
+  
+  // add this dependencies below
+  // Do not forget the comma beofre the devDependencies
   "devDependencies": {
     "nodemon": "^3.1.1"
   }
@@ -40,9 +35,24 @@ change things in the file `package.json`
 
 ```
 
-after changing `package.json` try to run the application using
-
+install the dependencies (additionally with bootstrap)
 ```sh
-npm install
-npm run dev
+npm install express-fileupload 
 ```
+run the app using start
+```sh
+npm start
+```
+run the app using dev mode (optional)
+```sh
+npm run dev 
+```
+The default port should be in `localhost:3000`
+
+### Additional
+If you want to link Bootstrap to your website, please do so using the link provided by Bootstrap to preserve memory. Link below will show you the actual bootstrap:
+https://getbootstrap.com/docs/5.3/getting-started/download/#cdn-via-jsdelivr
+
+
+TODO: 
+Try to add feature upload file within the Model!

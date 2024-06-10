@@ -10,7 +10,7 @@ posts = JSON.parse(rawdata);
 // Route: GET /
 router.route('/')
   .get((req, res) => {
-    res.send(posts);
+    res.json(posts);
   })
   .post((req, res) => {
     const { title, username, date, text } = req.body;

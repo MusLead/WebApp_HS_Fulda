@@ -1,6 +1,7 @@
 # Ignore all node_modules directories
 **/node_modules/
 /Express/myApp/node_modules/
+**/package-lock.json
 
 # Other potential entries
 .env

@@ -10,7 +10,7 @@ var database= {
 const getAllPosts = (req, res) => { 
     // (req, res) must be included, otherwise, json file might not be found!
     // res.json(database.posts);
-    res.render('blogpost', {post: database.posts}); // res.render(name of ejs, objects); 
+    res.render('list', {blogposts: database.posts}); // res.render(name of ejs, objects); 
 }
 
 const createPost = async (req, res) => {
@@ -31,14 +31,26 @@ const createPost = async (req, res) => {
 const readPost = (req, res) => {
     const post = database.posts.find(p => p.id == req.params.id);
     if (post) {
-        res.send(post);
+        res.render('viewpost', { post: post});
     } else {
-        res.status(404).send({ error: 'Post not found' });
+        res.status(404).send('Post not found');
     }
 }
+
+const renderNewPost = (req, res) => {
+    formSubmit = {action: "/", method: "post", enctype: "multipart/form-data", submitValue: "Senden", class: "mt-4"}
+    formInputs = [
+      {label: "Titel", type: "text", name: "title", for: "title", id: "title"},
+      {label: "Username", type: "text", name: "username", for: "username", id: "username"},
+      {label: "Date", type: "date", name: "date", for: "date", id: "date"},
+      {label: "Text", type: "text", name: "text", for: "text", id: "text"}
+    ]
+    res.render('form', {formSubmit, formInputs}) // res.render(<Name of ejs file (View)>, {<objects>})
+  }
 
 module.exports = {
     getAllPosts,
     createPost,
-    readPost
+    readPost,
+    renderNewPost
 }

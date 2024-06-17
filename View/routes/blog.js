@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
 var postController = require('../controllers/blogController');
 
 // Route: GET /
@@ -10,7 +9,7 @@ router.route('/')
 
 // Route: GET /newPost
 router.route('/newPost')
-  .get((req, res) => res.render('blogpost')); //res.render(<Name of ejs file (View))
+  .get(postController.renderNewPost); 
 
 // Route: GET /:id
 router.route('/:id')

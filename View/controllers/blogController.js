@@ -1,3 +1,8 @@
+/**
+ * FOR THIS FORMAT (AGHA'S VERSION JUN. 2024), YOU NEED THESE COMPONENTS:
+ * (req, res) must be included, otherwise, json file might not be found!
+ */
+
 const fs = require('fs'); 
 
 var database= {
@@ -8,8 +13,6 @@ var database= {
 }
 
 const getAllPosts = (req, res) => { 
-    // (req, res) must be included, otherwise, json file might not be found!
-    // res.json(database.posts);
     res.render('list', {blogposts: database.posts}); // res.render(name of ejs, objects); 
 }
 
@@ -40,10 +43,10 @@ const readPost = (req, res) => {
 const renderNewPost = (req, res) => {
     formSubmit = {action: "/", method: "post", enctype: "multipart/form-data", submitValue: "Senden", class: "mt-4"}
     formInputs = [
-      {label: "Titel", type: "text", name: "title", for: "title", id: "title"},
-      {label: "Username", type: "text", name: "username", for: "username", id: "username"},
-      {label: "Date", type: "date", name: "date", for: "date", id: "date"},
-      {label: "Text", type: "text", name: "text", for: "text", id: "text"}
+      {label: "Titel", type: "text", name: "Title", for: "title", id: "title"},
+      {label: "Username", type: "text", name: "Username", for: "username", id: "username"},
+      {label: "Date", type: "date", name: "Date", for: "date", id: "date"},
+      {label: "Text", type: "text", name: "Text", for: "text", id: "text"}
     ]
     res.render('form', {formSubmit, formInputs}) // res.render(<Name of ejs file (View)>, {<objects>})
   }

@@ -37,7 +37,7 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'),
 // Setup the logger
 app.use(logger('combined', { stream: accessLogStream }));
 
-// Define routes
+// Define routes TODO: do we really need this? because we have defined them in the router right?
 app.get('/blog', blogController.getAllPosts);
 app.post('/blog/newPost', blogController.createPost);
 app.get('/blog/:id', blogController.readPost);

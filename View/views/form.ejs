@@ -18,7 +18,7 @@
             <% formInputs.forEach( input => { %>
                 <div class="form-group">
                     <label for="<%= input.for %>"><%= input.label %></label>
-                    <input type="<%= input.type %>" class="form-control" id=<%= input.id %> name="<%= input.name%>" required>
+                    <input type="<%= input.type %>" class="form-control" id=<%= input.id %> name="<%= input.name%>" <%= input.required  %>>
                 </div>
             <% }); %>
             <button type="submit" class="btn btn-primary mt-4">Absenden</button>

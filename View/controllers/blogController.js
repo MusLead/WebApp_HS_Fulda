@@ -40,7 +40,7 @@ const createPost = async (req, res) => {
     let postsJSON = JSON.stringify(database.posts);
     fs.writeFileSync('public/blog.json', postsJSON);
 
-    res.status(201).send(newPost);
+    res.status(201).render('viewpost', { post: newPost});
 }
 
 const readPost = (req, res) => {
@@ -55,11 +55,11 @@ const readPost = (req, res) => {
 const renderNewPost = (req, res) => {
     formSubmit = {action: "/blog", method: "post", enctype: "multipart/form-data", submitValue: "Senden", class: "mt-4"}
     formInputs = [
-      {label: "titel", type: "text", name: "Title", for: "title", id: "title"},
-      {label: "username", type: "text", name: "Username", for: "username", id: "username"},
-      {label: "date", type: "date", name: "Date", for: "date", id: "date"},
-      {label: "text", type: "text", name: "Text", for: "text", id: "text"},
-      {label: "photo", type: "file", name: "Photo", for: "photo", id: "photo"}
+      {label: "titel", type: "text", name: "title", for: "title", id: "title", required: "required"},
+      {label: "username", type: "text", name: "username", for: "username", id: "username", required: "required"},
+      {label: "date", type: "date", name: "date", for: "date", id: "date", required: "required"},
+      {label: "text", type: "text", name: "text", for: "text", id: "text", required: "required"},
+      {label: "photo", type: "file", name: "photo", for: "photo", id: "photo", required: ""}
     ]
     res.render('form', {formSubmit, formInputs}) // res.render(<Name of ejs file (View)>, {<objects>})
   }

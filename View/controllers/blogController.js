@@ -18,16 +18,28 @@ const getAllPosts = (req, res) => {
 
 const createPost = async (req, res) => {
     const { title, username, date, text } = req.body;
+    console.log(req.body);
+
+    let photoName = '';
+    if (req.files && req.files.photo) {
+        const file = req.files.photo;
+        photoName = file.name;
+        file.mv('./public/uploads/' + file.name);
+        console.log('File uploaded: \n' + file.name);
+    }
+
     const newPost = {
       id: database.posts.length + 1, // Einfache ID-Zuweisung
       title,
       username,
       date,
-      text
+      text,
+      photo: photoName
     };
     database.posts.push(newPost);
     let postsJSON = JSON.stringify(database.posts);
     fs.writeFileSync('public/blog.json', postsJSON);
+
     res.status(201).send(newPost);
 }
 
@@ -41,12 +53,13 @@ const readPost = (req, res) => {
 }
 
 const renderNewPost = (req, res) => {
-    formSubmit = {action: "/", method: "post", enctype: "multipart/form-data", submitValue: "Senden", class: "mt-4"}
+    formSubmit = {action: "/blog", method: "post", enctype: "multipart/form-data", submitValue: "Senden", class: "mt-4"}
     formInputs = [
-      {label: "Titel", type: "text", name: "Title", for: "title", id: "title"},
-      {label: "Username", type: "text", name: "Username", for: "username", id: "username"},
-      {label: "Date", type: "date", name: "Date", for: "date", id: "date"},
-      {label: "Text", type: "text", name: "Text", for: "text", id: "text"}
+      {label: "titel", type: "text", name: "Title", for: "title", id: "title"},
+      {label: "username", type: "text", name: "Username", for: "username", id: "username"},
+      {label: "date", type: "date", name: "Date", for: "date", id: "date"},
+      {label: "text", type: "text", name: "Text", for: "text", id: "text"},
+      {label: "photo", type: "file", name: "Photo", for: "photo", id: "photo"}
     ]
     res.render('form', {formSubmit, formInputs}) // res.render(<Name of ejs file (View)>, {<objects>})
   }

@@ -14,16 +14,27 @@ const getAllPosts = (req, res) => {
 
 const createPost = async (req, res) => {
     const { title, username, date, text } = req.body;
+
+    let photoName = '';
+    if (req.files && req.files.photo) {
+        const file = req.files.photo;
+        photoName = file.name;
+        file.mv('./public/uploads/' + file.name);
+        console.log('File uploaded: \n' + file.name);
+    }
+
     const newPost = {
       id: database.posts.length + 1, // Einfache ID-Zuweisung
       title,
       username,
       date,
-      text
+      text,
+      photo: photoName
     };
     database.posts.push(newPost);
     let postsJSON = JSON.stringify(database.posts);
     fs.writeFileSync('public/blog.json', postsJSON);
+
     res.status(201).send(newPost);
 }
 

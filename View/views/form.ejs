@@ -14,10 +14,10 @@
     
     <div class="container">
         <h1 class="mt-5">Neuen Blogpost erstellen</h1>
-        <form action="<%= formSubmit.action%>" method="<%= formSubmit.method %>" class="<%= formSubmit.class %>">
+        <form action="<%= formSubmit.action%>" method="<%= formSubmit.method %>" class="<%= formSubmit.class %>" enctype="<%= formSubmit.enctype  %>">
             <% formInputs.forEach( input => { %>
                 <div class="form-group">
-                    <label for="<%= input.for %>"><%= input.name%></label>
+                    <label for="<%= input.for %>"><%= input.label %></label>
                     <input type="<%= input.type %>" class="form-control" id=<%= input.id %> name="<%= input.name%>" required>
                 </div>
             <% }); %>

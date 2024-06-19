@@ -4,7 +4,7 @@ const fs = require('fs');
 
 // Array zur Speicherung der Posts
 let posts = [];
-const rawdata = fs.readFileSync('blog.json');
+const rawdata = fs.readFileSync('public/blog.json');
 posts = JSON.parse(rawdata);
 
 // Route: GET /
@@ -15,21 +15,25 @@ router.route('/')
   .post((req, res) => {
     const { title, username, date, text } = req.body;
 
-    const file = req.files.photo;
-    file.mv('./public/uploads/' + file.name);
-    console.log('File uploaded: \n' + file.name);
-    
+    let photoName = '';
+    if (req.files && req.files.photo) {
+        const file = req.files.photo;
+        photoName = file.name;
+        file.mv('./public/uploads/' + file.name);
+        console.log('File uploaded: \n' + file.name);
+    }
+
     const newPost = {
       id: posts.length + 1, // Einfache ID-Zuweisung
       title,
       username,
       date,
       text,
-      photo: file.name
+      photo: photoName
     };
     posts.push(newPost);
     let postsJSON = JSON.stringify(posts);
-    fs.writeFileSync('blog.json', postsJSON);
+    fs.writeFileSync('public/blog.json', postsJSON);
 
     res.status(201).send(newPost);
   });

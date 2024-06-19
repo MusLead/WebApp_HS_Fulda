@@ -7,7 +7,21 @@ var logger = require('morgan');
 const blogController = require('./controllers/blogController');
 
 var app = express();
+//----
+// IMPORTANT! THESE MUST BE ADDED BEFORE THE ROUTES!
+var fileUpload = require('express-fileupload');
+app.use(fileUpload({
+  createParentPath: true
+}));
+app.use(express.static('public/uploads'));
 
+// Create a write stream (in append mode) for logging
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+
+// Setup the logger
+app.use(logger('combined', { stream: accessLogStream }));
+
+//----
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -24,24 +38,6 @@ var blogRouter = require('./routes/blog'); // Import the blogRouter
 app.use('/', indexRouter);
 app.use('/blog', blogRouter); // add blogRouter to the app
 
-var fileUpload = require('express-fileupload');
-app.use(fileUpload({
-  createParentPath: true
-}));
-app.use(express.static('public/uploads'));
-
-//TODO: ask what does this do exactly???
-// Create a write stream (in append mode) for logging
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
-
-// Setup the logger
-app.use(logger('combined', { stream: accessLogStream }));
-
-// Define routes TODO: do we really need this? because we have defined them in the router right?
-app.get('/blog', blogController.getAllPosts);
-app.post('/blog/newPost', blogController.createPost);
-app.get('/blog/:id', blogController.readPost);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -57,6 +53,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 module.exports = app;

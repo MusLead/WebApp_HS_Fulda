@@ -29,7 +29,7 @@
 
     <div class="container">
         <h1 class="mt-5">Neuen Blogpost erstellen</h1>
-        <form action="/blog" method="POST" class="mt-4">
+        <form action="/blog" method="POST" class="mt-4" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Titel</label>
                 <input type="text" class="form-control" id="title" name="title" required>
@@ -45,6 +45,10 @@
             <div class="form-group">
                 <label for="text">Text</label>
                 <textarea class="form-control" id="text" name="text" rows="5" required></textarea>
+            </div>
+            <div class="form-group mt-3">
+                <label for="data">Photo</label>
+                <input type="file" id="data" name="photo">
             </div>
             <button type="submit" class="btn btn-primary mt-4">Absenden</button>
         </form>

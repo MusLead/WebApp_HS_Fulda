@@ -9,7 +9,7 @@ var blogRouter = require('./routes/blog'); // Import the blogRouter
 
 var app = express();
 
-
+// IMPORTANT! THIS MUST BE ADDED BEFORE THE ROUTES!
 var fileUpload = require('express-fileupload');
 app.use(fileUpload({
   createParentPath: true

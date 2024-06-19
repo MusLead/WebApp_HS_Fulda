@@ -15,8 +15,8 @@
         <p><strong>Posted by:</strong> <%= post.username %></p>
         <p><strong>Date:</strong> <%= post.date %></p>
         <p><%= post.text %></p>
-        <% if (post.image) { %>
-            <img src="<%= post.image %>" class="img-fluid" alt="<%= post.title %>">
+        <% if (post.photo) { %>
+            <img src="public/<%= post.photo %>" class="img-fluid" alt="<%= post.photo %>">
         <% } %>
         <a href="/" class="btn btn-primary mt-4">Back to List</a>
     </div>

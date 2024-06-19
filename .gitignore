@@ -8,4 +8,5 @@
 dist/
 coverage/
 
+# Ignore log files, contains sensitive information
 **/access.log

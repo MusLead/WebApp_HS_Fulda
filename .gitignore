@@ -7,3 +7,5 @@
 .env
 dist/
 coverage/
+
+**/access.log

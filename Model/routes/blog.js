@@ -15,16 +15,17 @@ router.route('/')
   .post((req, res) => {
     const { title, username, date, text } = req.body;
 
-    const file = req.files.file;
-    file.mv('public/uploads'+file.name)
-    console.log(file.name);
-    //TODO: if this works, try to put the file inside the post!
+    const file = req.files.photo;
+    file.mv('./public/uploads/' + file.name);
+    console.log('File uploaded: \n' + file.name);
+    
     const newPost = {
       id: posts.length + 1, // Einfache ID-Zuweisung
       title,
       username,
       date,
-      text
+      text,
+      photo: file.name
     };
     posts.push(newPost);
     let postsJSON = JSON.stringify(posts);

@@ -36,9 +36,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var indexRouter = require('./routes/index');
 var blogRouter = require('./routes/blog'); // Import the blogRouter
+var apiRouter = require('./routes/api'); // Import the apiRouter
 
 app.use('/', indexRouter);
 app.use('/blog', blogRouter); // add blogRouter to the app
+app.use('/api', apiRouter); // add apiRouter to the app
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

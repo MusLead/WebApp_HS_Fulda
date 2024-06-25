@@ -62,7 +62,7 @@ https://getbootstrap.com/docs/5.3/getting-started/download/#cdn-via-jsdelivr
 - If in Windows you see this error:
   > .ps1 is not digitally signed. The script will not execute on the system.
   
-  then write this in power Shell:
+  then execute this in power Shell:
   ```sh
   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
   ```

@@ -1,5 +1,10 @@
+# Web_App SoSe 2024
 
-Anleitung express
+Name: Agha Muhammad Aslam
+
+Matrikelnr.: 1515659
+
+## Anleitung express
 
 install express in the target folder (if the ejs in the target folder has not been added!)
 ```
@@ -49,10 +54,16 @@ npm run dev
 ```
 The default port should be in `localhost:3000`
 
-### Additional
-If you want to link Bootstrap to your website, please do so using the link provided by Bootstrap to preserve memory. Link below will show you the actual bootstrap:
+## Additional
+- If you want to link Bootstrap to your website, please do so using the link provided by Bootstrap to preserve memory. Link below will show you the actual bootstrap:
 https://getbootstrap.com/docs/5.3/getting-started/download/#cdn-via-jsdelivr
 
 
-TODO: 
-Try to add feature upload file within the Model!
+- If in Windows you see this error:
+  > .ps1 is not digitally signed. The script will not execute on the system.
+  
+  then write this in power Shell:
+  ```sh
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+  ```
+  source: https://caiomsouza.medium.com/fix-for-powershell-script-not-digitally-signed-69f0ed518715

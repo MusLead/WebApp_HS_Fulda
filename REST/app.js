@@ -4,7 +4,6 @@ const fs = require('fs');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const blogController = require('./controllers/blogController');
 
 var app = express();
 

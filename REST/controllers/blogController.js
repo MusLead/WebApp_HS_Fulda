@@ -1,20 +1,13 @@
-/**
- * FOR THIS FORMAT (AGHA'S VERSION JUN. 2024), YOU NEED THESE COMPONENTS:
- * (req, res) must be included, otherwise, json file might not be found!
- */
-
 const fs = require('fs'); 
 
 var database= {
     posts: require('../public/blog.json'),
-    users: require('../public/users.json'),
     setPosts: function(data){
         this.posts=data;
-    },
-    setUsers: function(data){
-        this.users=data;
     }
 }
+
+var lastID = database.posts[database.posts.length-1].id;
 
 const getAllPosts = { 
     status: 200,
@@ -37,7 +30,7 @@ const createPost = req => {
     }
 
     const newPost = {
-      id: database.posts.length + 1, // Einfache ID-Zuweisung
+      id: lastID++, // Einfache ID-Zuweisung
       title,
       username,
       date,
@@ -118,35 +111,12 @@ const deleteData = req => {
         }
     } else {
         return {
-            status: 404,
-            json: { "success": false, "message" : "Post not found"}
-        }
+            status: 200,
+            json: { "success": true, "message" : "Post has been deleted"}
+        };
     }
 }
 
-const createUser = (req, res) => {
-    const { username, password, email } = req.body;
-    const newUser = {
-        id: database.users.length + 1,
-        username,
-        password,
-        email
-    };
-    database.users.push(newUser);
-    let usersJSON = JSON.stringify(database.users);
-    fs.writeFileSync('public/users.json', usersJSON);
-    res.status(201).json({ "success": true, user: newUser});
-}
-
-const signInUser = (req, res) => {
-    const { username, password } = req.body;
-    const user = database.users.find(u => u.username == username && u.password == password);
-    if (user) {
-        res.status(200).json({ "success": true, user: user});
-    } else {
-        res.status(404).json({ "success": false, "message" : "User not found"});
-    }
-}
 
 module.exports = {
     getAllPosts,

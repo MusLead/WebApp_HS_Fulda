@@ -1,23 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/blogController');
-const url = 'http://localhost:3000/api/blog/';
+const url = 'localhost:3000/api/blog/';
 
 async function handleAPICalls(url, method, body) {
+  console.log("URL: " + url);
   var response = await fetch(url,{  
     method: method,
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(body)
+    body: body ? JSON.stringify(body) : null
   });
-  return response.then(response => response.json())
+  return response.json();
   
 }
 
 // Route: GET /
 router.route('/')
-  .get((req,res) => {
+  .get(async (req,res) => {
     handleAPICalls(url, 'GET', null)
       .then(json => {
         res.render('list', {blogposts: json.data });
@@ -26,7 +27,7 @@ router.route('/')
         res.send(err);
       });
   })
-  .post(async (req,res) => {
+  .post(async(req,res) => {
     handleAPICalls(url, 'POST', req.body)
       .then(json => {
         res.status(201).render('viewpost', { post: json.post});

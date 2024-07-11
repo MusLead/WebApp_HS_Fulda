@@ -55,6 +55,7 @@ const createPost = req => {
 
 const readPost = req => {
     const post = database.posts.find(p => p.id == req.params.id);
+    // console.log(post);
     if (post) {
         return {
             status: 200,
@@ -69,17 +70,26 @@ const readPost = req => {
     }
 }
 
-const renderNewPost = (req, res) => {
+const renderNewPost = res => {
     formSubmit = {action: "/blog", method: "post", enctype: "multipart/form-data", submitValue: "Senden", class: "mt-4"}
-    formInputs = [
-      {label: "titel", type: "text", name: "title", for: "title", id: "title", required: "required"},
-      {label: "username", type: "text", name: "username", for: "username", id: "username", required: "required"},
-      {label: "date", type: "date", name: "date", for: "date", id: "date", required: "required"},
-      {label: "text", type: "text", name: "text", for: "text", id: "text", required: "required"},
-      {label: "photo", type: "file", name: "photo", for: "photo", id: "photo", required: ""}
+    // console.log(res)
+    formInputs = res != undefined ? [
+      {label: "", type: "hidden", name: "id", for: "id", id: "id", required: "required", value: res.id},
+      {label: "titel", type: "text", name: "title", for: "title", id: "title", required: "required", value: res.title},
+      {label: "username", type: "text", name: "username", for: "username", id: "username", required: "required", value: res.username},
+      {label: "date", type: "date", name: "date", for: "date", id: "date", required: "required", value: res.date},
+      {label: "text", type: "text", name: "text", for: "text", id: "text", required: "required", value: res.text},
+      {label: "photo", type: "file", name: "photo", for: "photo", id: "photo", required: "", value: res.photo}
+    ] : [
+        {label: "titel", type: "text", name: "title", for: "title", id: "title", required: "required", value: ""},
+        {label: "username", type: "text", name: "username", for: "username", id: "username", required: "required", value: ""},
+        {label: "date", type: "date", name: "date", for: "date", id: "date", required: "required", value: ""},
+        {label: "text", type: "text", name: "text", for: "text", id: "text", required: "required", value: ""},
+        {label: "photo", type: "file", name: "photo", for: "photo", id: "photo", required: "", value: ""}
     ]
-
-    res.render('form', {formSubmit, formInputs}) // res.render(<Name of ejs file (View)>, {<objects>})
+    // console.log(formInputs)
+    return {formSubmit, formInputs}
+    // res.render('post', {formSubmit, formInputs}) // res.render(<Name of ejs file (View)>, {<objects>})
   }
 
 const updateData = req => {
@@ -121,30 +131,6 @@ const deleteData = req => {
             status: 404,
             json: { "success": false, "message" : "Post not found"}
         }
-    }
-}
-
-const createUser = (req, res) => {
-    const { username, password, email } = req.body;
-    const newUser = {
-        id: database.users.length + 1,
-        username,
-        password,
-        email
-    };
-    database.users.push(newUser);
-    let usersJSON = JSON.stringify(database.users);
-    fs.writeFileSync('public/users.json', usersJSON);
-    res.status(201).json({ "success": true, user: newUser});
-}
-
-const signInUser = (req, res) => {
-    const { username, password } = req.body;
-    const user = database.users.find(u => u.username == username && u.password == password);
-    if (user) {
-        res.status(200).json({ "success": true, user: user});
-    } else {
-        res.status(404).json({ "success": false, "message" : "User not found"});
     }
 }
 

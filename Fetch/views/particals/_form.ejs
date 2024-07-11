@@ -1,0 +1,15 @@
+<div class="container">
+    <form id="meinFormular" action="<%= formSubmit.action%>" method="<%= formSubmit.method %>" class="<%= formSubmit.class %>" enctype="<%= formSubmit.enctype  %>">
+        <% formInputs.forEach( input => { %>
+            <div class="form-group">
+                <label for="<%= input.for %>"><%= input.label %></label>
+                <input type="<%= input.type %>" class="form-control" id="<%= input.id %>" name="<%= input.name %>" <%= input.required %> value="<%= input.value %>">
+            </div>
+        <% }); %>
+        <button href="#" id="submitButton" class="btn btn-success mt-4">Absenden</button>
+        <a href="/" class="btn btn-primary mt-4">Back to List</a>
+        <% if (typeof(post) != 'undefined') { %>
+            <a href="#" id="viewButton" class="btn btn-secondary mt-4">Back to View</a>
+        <% } %>
+    </form>
+</div>

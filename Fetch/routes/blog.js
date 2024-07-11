@@ -37,6 +37,10 @@ router.route('/')
   })
   .post(async (req, res) => {
     try {
+      // additional task: add a joke to the post
+      const joke = await handleAPICalls('https://api.chucknorris.io/jokes/random', 'GET', null);
+      req.body.text += "\n\nAdditional joke for this post:\n" + joke.value;
+      console.log(req.body.text);
       const json = await handleAPICalls(apiUrl, 'POST', req.body);
       res.status(201).render('post', { post: json.post });
     } catch (err) {

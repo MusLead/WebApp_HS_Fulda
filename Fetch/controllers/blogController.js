@@ -72,19 +72,19 @@ const readPost = req => {
 
 const renderNewPost = res => {
     formSubmit = {action: "/blog", method: "post", enctype: "multipart/form-data", submitValue: "Senden", class: "mt-4"}
-    // console.log(res)
+    console.log(res)
     formInputs = res != undefined ? [
       {label: "", type: "hidden", name: "id", for: "id", id: "id", required: "required", value: res.id},
       {label: "titel", type: "text", name: "title", for: "title", id: "title", required: "required", value: res.title},
       {label: "username", type: "text", name: "username", for: "username", id: "username", required: "required", value: res.username},
       {label: "date", type: "date", name: "date", for: "date", id: "date", required: "required", value: res.date},
-      {label: "text", type: "text", name: "text", for: "text", id: "text", required: "required", value: res.text},
+      {label: "text", type: "textarea", name: "text", for: "text", id: "text", required: "required", value: res.text},
       {label: "photo", type: "file", name: "photo", for: "photo", id: "photo", required: "", value: res.photo}
     ] : [
         {label: "titel", type: "text", name: "title", for: "title", id: "title", required: "required", value: ""},
         {label: "username", type: "text", name: "username", for: "username", id: "username", required: "required", value: ""},
         {label: "date", type: "date", name: "date", for: "date", id: "date", required: "required", value: ""},
-        {label: "text", type: "text", name: "text", for: "text", id: "text", required: "required", value: ""},
+        {label: "text", type: "textarea", name: "text", for: "text", id: "text", required: "required", value: ""},
         {label: "photo", type: "file", name: "photo", for: "photo", id: "photo", required: "", value: ""}
     ]
     // console.log(formInputs)

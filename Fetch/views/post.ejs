@@ -13,7 +13,7 @@
     <%- include('./particals/_nav') %>
 
     <div id="formular" class="container">
-        <h1 class="mt-5">Blogpost editieren</h1>    
+        <h1 class="mt-5">Blogpost ändern</h1>    
         <%- include('./particals/_form') %>
     </div>
 
@@ -26,15 +26,17 @@
     <div class="container">
         <a href="#" id="deleteButton" class="btn btn-danger mt-4">Delete Post</a>
     </div>
+
     <script>
         // Funktion für den API-Aufruf nachdem editiert wurde
         function apiCall(method, id="") {
+
             //TODO ASK: why do we need to use FormData here?
             // could not we just get the body-data from the form?
             let data = new FormData(document.getElementById('meinFormular'));
             data.append('files', document.querySelector('input[type="file"]').files[0]);
             
-            console.log(`/api/blog/${id}`)
+            console.log(data);
             fetch(`/api/blog/${id}`, {
                 method: method,
                 body: data

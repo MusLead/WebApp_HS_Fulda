@@ -2,7 +2,7 @@
     <h1 class="my-4"><%= post.title %></h1>
     <p><strong>Posted by:</strong> <%= post.username %></p>
     <p><strong>Date:</strong> <%= post.date %></p>
-    <p><%= post.text %></p>
+    <p style="white-space: pre-line;"><%= post.text %></p>
     <% if (post.photo) { %>
         <img src="/<%= post.photo %>" class="img-fluid" alt="<%= post.photo %>">
     <% } %>

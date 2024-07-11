@@ -14,13 +14,13 @@ router.route('/blog/')
     res.status(result.status).json(result.json);
   });
 
-router.route('/blog/signInUser')
+router.route('/signInUser')
   .get((req,res) => {
     const result = userController.signInUser(req);
     res.status(result.status).json(result.json);
   })
 
-router.route('/blog/users') // DO NOT FORGET THE / AT THE BEGINNING!
+router.route('/users') // DO NOT FORGET THE / AT THE BEGINNING!
   .get((req,res) => {
     const result = userController.getAllUsers;
     res.status(result.status).json(result.json);
@@ -31,7 +31,7 @@ router.route('/blog/users') // DO NOT FORGET THE / AT THE BEGINNING!
   });
 
   // WARNING! THE ROUTE WITH ID MUST BE THE LAST ROUTE, ALWAYS!
-router.route('/blog/user/:id')
+router.route('/user/:id')
   .get((req,res) => {
     const result = userController.readUser(req);
     res.status(result.status).send(result.json);

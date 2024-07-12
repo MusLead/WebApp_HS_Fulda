@@ -44,7 +44,7 @@ const createPost = req => {
     fs.writeFileSync('public/blog.json', postsJSON);
     return {
         status: 201,
-        json: { "success": true, post: newPost}
+        json: { "success": true, data: newPost}
     };
 }
 
@@ -54,7 +54,7 @@ const readPost = req => {
     if (post) {
         return {
             status: 200,
-            json: { "success": true, post: post}
+            json: { "success": true, data: post}
         }
     } else {
         return {
@@ -100,7 +100,7 @@ const updateData = req => {
         fs.writeFileSync('public/blog.json', postsJSON);
         return {
             status: 200,
-            json: { "success": true, post: post}
+            json: { "success": true, data: post}
         }
     } else {
         return {

@@ -48,7 +48,9 @@
                         window.location.href = "/";
                         alert('Post wurde gelöscht')
                     } else {
-                        window.location.href = `/blog/${data.post.id}`;
+                        alert('Post wurde geändert');
+                        history.go(0); // this will reload the page
+                        //window.location.href = `/blog/${data.data.id}`; // this approach is okay, but if data.data.id is not available, it will not reload the page!
                     }
                     // console.log(data);
                     

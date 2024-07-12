@@ -1,8 +1,3 @@
-/**
- * FOR THIS FORMAT (AGHA'S VERSION JUN. 2024), YOU NEED THESE COMPONENTS:
- * (req, res) must be included, otherwise, json file might not be found!
- */
-
 const fs = require('fs'); 
 
 var database= {

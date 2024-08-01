@@ -1,7 +1,11 @@
 # CSS & Bootstrap
 
 # CSS
-With help of other resource: [w3School CSS](https://www.w3schools.com/css)
+With help of other resource: 
+
+[w3School CSS](https://www.w3schools.com/css)
+
+[CSS-Grid Gnerator](https://cssgrid-generator.netlify.app)
 
 ## CSS Syntax
 ![syntax structure](https://www.w3schools.com/css/img_selector.gif)

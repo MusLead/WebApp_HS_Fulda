@@ -31,7 +31,9 @@ const createPost = async (req, res) => {
       text,
       photo: photoName
     };
-    database.posts.push(newPost);
+    // database.posts.push(newPost);
+    // another way to update (see Lecture Slides from Model)
+    database.setPosts([...database.posts, newPost]);
     let postsJSON = JSON.stringify(database.posts);
     fs.writeFileSync('public/blog.json', postsJSON);
 

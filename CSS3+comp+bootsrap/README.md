@@ -1,5 +1,8 @@
 # CSS & Bootstrap
+
+# CSS
 With help of other resource: [w3School CSS](https://www.w3schools.com/css)
+
 ## CSS Syntax
 ![syntax structure](https://www.w3schools.com/css/img_selector.gif)
 
@@ -82,7 +85,11 @@ html_tag.html_class{
 > - Incorrect (space): margin-left: 20 px;
 > - Correct (no space): margin-left: 20px;
 
-#Bootstrap
+## Media in CSS
+Über Media-Queries kann verhalten von CSS an das jeweilige Gerät und Auflösung angepasst werden.
+[More Information on Youtube](https://youtu.be/yU7jJ3NbPdA?si=fDcCn4FWC5L96kqu)
+
+# Bootstrap
 
 ## WAS IST BOOTSTRAP?
 1. Frontend-Framework

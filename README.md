@@ -4,6 +4,18 @@ Name: Agha Muhammad Aslam
 
 Matrikelnr.: 1515659
 
+## Structure data with links of each topic's lecture
+1. [HTML](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=2)
+2. [CSS+Comp](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=3)+[Bootstrap](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=4)
+3. [Express](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=5)
+4. [Formulare](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=6)
+6. [Routing](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=7)
+7. [Model](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=8)
+8. [Controller](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=9)
+9. [View](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=10)
+10. [REST](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=11)
+11. [Fetch](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=12)
+
 ## Anleitung express
 
 install express in the target folder (if the ejs in the target folder has not been added!)

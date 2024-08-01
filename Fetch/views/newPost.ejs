@@ -20,8 +20,11 @@
     
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/theme.js"></script> <!-- FIXME: WHY THIS LINE DOES NOT WORK? see the web inspector!
-    espicially if I call the API rhough here -->
+    <!--<script src="js/theme.js"></script>--> <!-- WHY THIS LINE DOES NOT WORK? see the web inspector!
+    espicially if I call the API rhough here
+    Answer (01.08.2024): The problem might be realted to the routing (see the the routing chapter!), 
+    since you have a different path routing, the express could not find the file.
+    -->
     <script>
         document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
     </script>

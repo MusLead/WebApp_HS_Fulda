@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ms-4">
+    <nav class="navbar navbar-expand-lg ms-4">
         <a class="navbar-brand" href="/">Mein Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -53,5 +53,9 @@
     <!-- Bootstrap JS and Popper.js -->
     <script src="http://localhost:3000/js/popper.min.js"></script>
     <script src="http://localhost:3000/js/bootstrap.min.js"></script>
+
+    <script>
+        document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    </script>
 </body>
 </html>

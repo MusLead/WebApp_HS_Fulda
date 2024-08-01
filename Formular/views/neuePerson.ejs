@@ -26,5 +26,10 @@
     <!-- Bootstrap JS and Popper.js -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    </script>
+    
 </body>
 </html>

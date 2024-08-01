@@ -5,16 +5,16 @@ Name: Agha Muhammad Aslam
 Matrikelnr.: 1515659
 
 ## List of Contents
-1. [HTML](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=2)/[file](/HTML/)
-2. [CSS+Comp](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=3)+[Bootstrap](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=4)/[file](/CSS3+comp+bootsrap/)
-3. [Express](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=5)/[file](/Express/)
-4. [Formulare](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=6)/[file](/Formular/)
-6. [Routing](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=7)/[file](/Routing/)
-7. [Model](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=8)/[file](/Model/)
-8. [Controller](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=9)/[file](/Controller/)
-9. [View](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=10)/[file](/View/)
-10. [REST](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=11)/[file](/REST/)
-11. [Fetch](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=12)/[file](/Fetch/)
+1. [HTML](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=2) [(file)](/HTML/)
+2. [CSS+Comp](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=3) and [Bootstrap](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=4) [(file)](/CSS3+comp+bootsrap/)
+3. [Express](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=5) [(file)](/Express/)
+4. [Formulare](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=6) [(file)](/Formular/)
+6. [Routing](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=7) [(file)](/Routing/)
+7. [Model](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=8) [(file)](/Model/)
+8. [Controller](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=9) [(file)](/Controller/)
+9. [View](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=10) [(file)](/View/)
+10. [REST](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=11) [(file)](/REST/)
+11. [Fetch](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=12) [(file)](/Fetch/)
 
 ## Anleitung express
 

@@ -68,15 +68,16 @@ On the other hand, the `id` attribute is used to uniquely identify the `<select>
 [List of Responses Objects](https://www.tutorialspoint.com/nodejs/nodejs_response_object.htm)
 
 # Uebungaufgabe
+
 ## The process of submiting form
-1. The form will be rendered
-2. Fill the form and submit with path `/neuePerson`
-3. In router, this function will be executed
+1. The form will be rendered [(index.js)](/Formular/routes/index.js)
+2. Fill the form and submit with path `/neuePerson` [(person.ejs)](/Formular/views/person.ejs)
+3. After Submission the router in this function will be executed [(index.js)](/Formular/routes/index.js)
     - within this function the form data will be retrieved from `req.body`
 ```js
 router.post('/neuePerson', function(req, res, next) {...})
 ```
-4. Render the value to the next page `view/neuePerson.ejs`
+4. Render the page and show the value to the next page `view/neuePerson.ejs` [(index.js)](/Formular/routes/index.js)
 ```js
 router.post('/neuePerson', function(req, res, next) {
     

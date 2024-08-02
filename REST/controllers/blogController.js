@@ -1,3 +1,4 @@
+const { create } = require('domain');
 const fs = require('fs'); 
 
 var database= {
@@ -91,10 +92,13 @@ const updateData = req => {
             json: { "success": true, post: post}
         }
     } else {
-        return {
-            status: 404,
-            json: { "success": false, "message" : "Post not found"}
-        }
+        // to make sure the code is idempotent, we create the post if it does not exist
+        return createPost(req);   
+             
+        // return {
+        //     status: 404,
+        //     json: { "success": false, "message" : "Post not found"}
+        // }
     }
 }
 

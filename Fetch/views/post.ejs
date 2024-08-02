@@ -31,12 +31,29 @@
         // Funktion für den API-Aufruf nachdem editiert wurde
         function apiCall(method, id="") {
 
-            //TODO ASK: why do we need to use FormData here?
+            // why do we need to use FormData here?
             // could not we just get the body-data from the form?
+            // answer 02.08.2024:
+            // FormData is a built-in object that allows you to encode and send form data as key-value pairs.
+            // it is another way to retrieve the form data. 
+            // Another reason I believe, is because we are sending a file without using routes from Express.
+            // In express the data is being retrieved from the req.body, but here we are sending the data directly to the API.
+            
+            // Retrieve Data as Key-Value Pairs
             let data = new FormData(document.getElementById('meinFormular'));
             data.append('files', document.querySelector('input[type="file"]').files[0]);
             
             console.log(data);
+            /* example result using PUT Method:
+            {
+                id: 5,
+                title: 'Fünfter Blogeintrag',
+                username: 'user50',
+                date: '2024-06-05',
+                text: 'Dies ist der Text des fünften Blogeintrags.'
+            }
+            */
+           
             fetch(`/api/blog/${id}`, {
                 method: method,
                 body: data
@@ -52,8 +69,6 @@
                         history.go(0); // this will reload the page
                         //window.location.href = `/blog/${data.data.id}`; // this approach is okay, but if data.data.id is not available, it will not reload the page!
                     }
-                    // console.log(data);
-                    
                 } else {
                     alert('Fehler beim Speichern');
                 }
@@ -63,13 +78,16 @@
         // Eventlistener für den „Absenden“-Button
         if (document.getElementById('submitButton')){
             document.getElementById('submitButton').addEventListener('click', function(event) {
+                // prevent the default action of the event
                 event.preventDefault();
                 apiCall('PUT', '<%= post.id %>');
             });
         }
+
         // Eventlistener für den „Löschen“-Button
         if (document.getElementById('deleteButton')){
             document.getElementById('deleteButton').addEventListener('click', function(event) {
+                // prevent the default action of the event
                 event.preventDefault();
                 apiCall('DELETE', '<%= post.id %>');
             });
@@ -81,6 +99,7 @@
         // Eventlistener für den „Editieren“-Button
         if (document.getElementById('editPost')){
             document.getElementById('editPost').addEventListener('click', function(event) {
+                // prevent the default action of the event
                 event.preventDefault();
                 document.getElementById('formular').style.display = 'block';
                 document.getElementById('viewpost').style.display = 'none';
@@ -90,11 +109,13 @@
         // Eventlistener für den „Zurück zum View“-Button
         if (document.getElementById('viewButton')){
             document.getElementById('viewButton').addEventListener('click', function(event) {
+                // prevent the default action of the event
                 event.preventDefault();
                 document.getElementById('formular').style.display = 'none';
                 document.getElementById('viewpost').style.display = 'block';
             });
         }
+        
         // adaptiert das Theme anhand des Betriebssystems
         document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
     </script>

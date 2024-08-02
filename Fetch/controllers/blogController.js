@@ -103,10 +103,13 @@ const updateData = req => {
             json: { "success": true, data: post}
         }
     } else {
-        return {
-            status: 404,
-            json: { "success": false, "message" : "Post not found"}
-        }
+        // to make sure the update is idempotent, we create a new post if the post is not found
+        return createPost(req);
+        
+        // return {
+        //     status: 404,
+        //     json: { "success": false, "message" : "Post not found"}
+        // }
     }
 }
 

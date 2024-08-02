@@ -1,6 +1,6 @@
 # REST
 
-## WARNING! 
+## WARNING
 
 TODO: My code is not fully integrated with the HTTP Rule! please be carefult when making my code as a reference
 

@@ -17,6 +17,10 @@ Matrikelnr.: 1515659
 9. [REST](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=11) [(file)](/REST/)
 10. [Fetch](https://elearning.hs-fulda.de/ai/course/view.php?id=1375&section=12) [(file)](/Fetch/)
 
+## TODO: how to npm install but only in each pages add instruction!
+
+## TODO: Overview what I have done over the past few days!
+
 ## Anleitung express
 
 install express in the target folder (if the ejs in the target folder has not been added!)

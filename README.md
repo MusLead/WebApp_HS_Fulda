@@ -19,10 +19,6 @@ Matrikelnr.: 1515659
 
 ## Instiall Express Package: [Lecutre Slide Express](/Lecture_Files/SU:_04-Express__File.pdf)
 
-## TODO: how to npm install but only in each pages add instruction!
-
-## TODO: Overview what I have done over the past few days!
-
 ## Anleitung express
 
 install express in the target folder (if the ejs in the target folder has not been added!)
